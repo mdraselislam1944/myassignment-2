@@ -1,8 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body{
-margin-left:0;
-margin-right: 0;
-padding: 0;
-border: 0;
 background-color: white;
 font-family: 'Open Sans', sans-serif;
 }
@@ -12,7 +13,7 @@ p{
 header{
     background-color: rgba(255, 144, 14, 0.1);
 }
-/* this is header part */
+/* ------------------this is header part ------------------------*/
 .nav-title{
     list-style: none;
     display: grid;
@@ -41,6 +42,7 @@ header{
     border-style: none;
     border-radius: 2px;
     padding:20px 20px;
+    color: white;
 }
 .banner{
    background-image: url('images/banner.png');
@@ -80,18 +82,30 @@ width: 340px;
 .meeting-description .meeting-color2{
     color: #FF900E;
 }
-
-.experience-description{
-     display: grid;
-    grid-template-rows: auto;
+.sub-section-margin{
+height: 100px;
+width: 1px;
+border: 1px solid #FF900E;
+text-align: start;
 }
+.sub-section-margin h3{
+    margin-left: 20px;
+   width: 500px;
+   font-size: 2.2rem;
+   text-align: center;
+}
+
 .experience{
     display: grid;
     grid-template-columns: 1fr 1fr ; 
-    margin-left: 100px;
-    margin-right: 100px;
-    margin-top: 20px;
-    background-color:whitesmoke;
+    margin: 100px 100px 100px 100px;
+    background-color:white;
+    height: 600px;
+    gap: 20px;
+}
+.experience-description{
+    display: grid;
+   grid-template-rows: auto;
 }
 .sub-section{
     font-size: 12px;
@@ -99,12 +113,12 @@ width: 340px;
 .experience-child{
     font-size: 13px;
     background-color:white;
-    padding: 15px 50px 15px 50px;
+    padding: 15px 50px 15px 15px;
     border: 1px solid white;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-left: 5px;
-    
+    margin:5px;
+    width: 600px;
+    -webkit-box-shadow: 0 0 7px rgb(158, 155, 155);
+    box-shadow: 0 0 7px rgb(158, 155, 155);
 }
  .experience .sub-section{
     grid-column: 1/2;
@@ -112,17 +126,45 @@ width: 340px;
  .experience .experience-img{
     grid-column: 3/4;
     grid-row: 1/4;
+    height: 580px;
+    width: 560px;
+    position: relative;
  }
  .experience .experience-description{
     grid-column: 1/2;
  }
  .experience-img img{
-    height: 500px;
-    width: 400px;
+    height: 600px;
+    width: 100%;
+    padding: 0 0 50px 100px;
   }
-
+   .btn-special{
+    width: 300px;
+    height: 150px;
+    border-radius: 5px;
+    position: absolute;
+    left: 0px;
+    bottom:250px;
+  }
+.service{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+     gap: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.service-img-title img{
+    height: 300px;
+    width: 400px;
+}
 .facts-description{
     margin-left: 100px;
+    
+}
+.facts-description h3{
+    font-size: 30px;
 }
   /* ---footer section------- */
 .footer-title{
@@ -134,10 +176,11 @@ text-align: center;
     justify-content: center;
    gap: 5px;
    margin-left: 100px;
+   margin-top: 50px;
 
 }
 .fact-block{
-    padding: 20px 20px 20px 20px;
+    padding: 75px 20px 75px 20px;
     border: 1px solid #FF900E ;
 }
 .fact-blocks{
@@ -146,13 +189,33 @@ text-align: center;
     gap: 75px;
     margin-left: 100px;
     margin-right: 100px;
+    margin-top: 50px;
   
 }
+.fact-block:hover{
+    transform: scale(.60) rotate(45deg);
+    background-color: rgb(0, 183, 255);
+    animation-name: example;
+    animation-duration: 4s;
+}
+@keyframes example {
+    0%   {background-color: red;}
+    25%  {background-color: yellow;}
+    50%  {background-color: blue;}
+    100% {background-color: green;}
+  }
 
 .f-blogs img{
     height: 30px;
     width: 100px;
-    
+    -webkit-filter: grayscale(100%);
+     filter: grayscale(100%);
+}
+.fact-ancor{
+    display: grid;
+    grid-template-columns:  1fr;
+    place-items: center;
+    text-decoration: none;
 }
 .f-title{
     text-align: center;
@@ -161,6 +224,10 @@ text-align: center;
     padding: 10px 2px 10px 2px;
     border-radius: 5px;
 }
+.footer{
+margin-top: 75px;
+}
+/* media query and breakdown section */
 @media only screen and (max-width: 576px) {
     
     .nav-title{
@@ -191,26 +258,35 @@ text-align: center;
     display: flex;
     flex-direction: column;
     gap: 10px;
-   
-   }
-   .experience{
+   } 
+
+  .experience{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: 100%;
+    height: 100%;
+    margin: 0 2px 0 0;
+    align-items: center;
    }
    .experience img{
     background-size: cover;
     padding:75px 10px 75px 10px;
     border-radius: 1px;
    background-size: cover;
+   width: 100%;
+   height: 100%;
    }
 .experience-description{
         display: flex;
         flex-direction: column;
         gap: 10px;
+        width: 80%;
+        height: 100%;
 }
-.btn{
-   margin-left: 40%;
+
+.btn .btn-special{
+   margin-left: 50%;
 }
 .f-blogs{
     display: flex;
@@ -219,6 +295,14 @@ text-align: center;
 
 }
 .fact-blocks{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+.service{
+    margin-bottom: 10px;
+    height: 1000px;
     display: flex;
     flex-direction: column;
     gap: 10px;
